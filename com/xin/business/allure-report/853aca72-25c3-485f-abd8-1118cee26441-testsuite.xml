@@ -1,0 +1,250 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1545650319592" stop="1545650320153">
+  <name>com.xin.business</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1545650319592" status="failed" stop="1545650320000">
+      <name>loan_repay2.test_loan_repay[1.0-on-\u6388\u4fe1-post-http://10.141.12.42:8080/yep-front/yep/api-/apply_credit-{"Content-type":"application/json"}-{"head_snd_organ": "1000000001", "head_rev_organ": "1000000000", "head_business_id": "d19a7623c80e451fa035e1ii55f3b112", "head_msg_version": "1.0", "abstr": "test", "head_req_date": "20181211", "head_req_time": "0811045904", "head_tran_product": "XED", "head_tran_service": "100011", "source": "PH", "os_type": "O", "device_id": "IOS", "h5_ver": "1.0", "lbs": "106.729424,26.605585", "location_prov": "\\u5317\\u4eac\\u5e02", "location_city": "\\u5317\\u4eac\\u5e02", "location_area": "\\u671d\\u9633\\u533a", "location_addr": "\\u91d1\\u5730\\u5e7f\\u573a", "scence_ip": "192.168.102.32", "mac_addr": "00:01:6C:06:A6:29", "id_code": "13112219860621221X", "id_type": "I", "user_name": "\\u8d75\\u5fd7\\u826f", "phone": "18701372701", "birthplace": "\\u5b81\\u590f\\u56de\\u65cf\\u81ea\\u6cbb\\u533a", "sign_apply_id": "4fe5b3e26b9643d59bc812e9106006bd", "sign_user_id": "09487f1835f04d29804f089af04c7e9d", "sign_credit_id": "80f7f7b2049445c09bcf17ddf6e82c6d", "face_score": "90", "invitation_code": "13412345678", "invitation_channel": "1", "invitation_branchcode": "NXbank", "invitation_name": "\\u63a8\\u8350\\u4eba"}-{"errno":"200"}]</name>
+      <failure>
+        <message>KeyError: 'loan_status'</message>
+        <stack-trace>id = 1.0, _ = 'on', testcase = '授信', method = 'post'
+url = 'http://10.141.12.42:8080/yep-front/yep/api/apply_credit'
+uri = '/apply_credit', header = {'Content-type': 'application/json'}
+body = {'abstr': 'test', 'birthplace': '宁夏回族自治区', 'device_id': 'IOS', 'face_score': '90', ...}
+exception = '{"errno":"200"}'
+
+    @pytest.mark.parametrize('id,_,testcase,method,url,uri,header,body,exception', data)
+    def test_loan_repay(id, _, testcase, method, url, uri, header, body, exception):
+        a = 'hello'
+        allure.attach('测试用例', a)
+        url = url + uri
+        body = json.loads(body)
+        header = json.loads(header)
+        rsp = request(url, body, header)
+&gt;       content = rsp.json()["loan_status"]
+E       KeyError: 'loan_status'
+
+loan_repay2.py:21: KeyError</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="41d60542-19a7-4f1f-ba9e-1c23133fba8f-attachment.txt" title="测试用例" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="16300-MainThread"/>
+        <label name="host" value="ISS"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1545650320001" status="failed" stop="1545650320046">
+      <name>loan_repay2.test_loan_repay[2.0-on-\u501f\u6b3e-post-http://10.141.12.42:8080/yep-front/yep/api-/apply_loan-{"Content-type":"application/json"}-{"head_snd_organ": "1000000001", "head_rev_organ": "1000000000", "head_business_id": "6213dec9a5fb48b3b3e5b4744ckk7700", "head_msg_version": "1.0", "abstr": "test", "head_req_date": "20181221", "head_req_time": "0918023652", "head_tran_product": "XED", "head_tran_service": "100012", "source": "AP", "os_type": "O", "device_id": "IOS", "h5_ver": "1.0", "lbs": "106.729424,26.605585", "location_prov": "\\u5317\\u4eac\\u5e02", "location_city": "\\u5317\\u4eac\\u5e02", "location_area": "\\u671d\\u9633\\u533a", "location_addr": "\\u91d1\\u5730\\u5e7f\\u573a", "scence_ip": "192.168.102.32", "mac_addr": "00:01:6C:06:A6:29", "account_id": "128950050873483264", "principal": 1000, "currency": "156", "loan_term": 3, "loan_unit": "M", "repay_method": "I", "bank_card_type": "D", "bank_card_number": "6232006400103156610", "bank_card_expire_date": "", "bank_card_code": "0436", "bank_name": "\\u5b81\\u590f\\u94f6\\u884c", "bank_reserved_phone": "13688888888", "contact_relation1": "FM", "contact_name1": "\\u5415\\u7389\\u534e", "contact_phone1": "123", "contact_relation2": "FM", "contact_name2": "\\u5415\\u7389\\u56fd", "contact_phone2": "456", "purpose": "1", "sign_id": "f26c0f7bc74b4f60b289fbe5789e8a9c", "corp_post": "1", "lendInfo": {"lendStatus": "S", "transDate": "20181211", "transTime": "1024023652", "retCode": "0000", "retMsg": "\\u4ea4\\u6613\\u6210\\u529f", "remark": "remark", "lendTime": 1545398500000}}-{'head_snd_organ': '1000000000', 'head_rev_organ': '1000000001', 'head_business_id': '6213dec9a5fb48b3b3e5b4744ckk7880', 'head_msg_version': '1.0', 'abstr': '191f347df198a04950ba0b0c0afc89f87b3974904217559476254af80510e4c1c2c7bbc00f1b5e751ee5fa18795ab609d594b706ecd232e9f5dbb27d70b794f2792b4bd7eda3f4fef304e2b2409c722fd241837bd2daa543e64af45e388250be4f5708b2749a1e7528bbf6a339ff2fe6b76aa46208a5a8704525037bf3cc7d1ec250b5e06d9ce81012fb0f0492d9ee7500f8e44c85e3ee929911c42c10cffa082f06ae4330adbd46638e4603ae9004e5f5379fd51b130f77569fa451f5a90bdc42cec38b8de94e16b1ff97e3b8b8c3d9c3c4789689c106bbed3baf2b76f24c11b5fc58b77b30047a2320d3d4be8cffac1a96622f49ce8b64b7d856301e4073d8', 'head_rsp_date': '20181221', 'head_rsp_time': '1221172624', 'retCode': '0000', 'retMsg': '\u4ea4\u6613\u6210\u529f', 'loan_id': '20181221128548643779452928', 'loan_status': 'S'}\n]</name>
+      <failure>
+        <message>AssertionError: </message>
+        <stack-trace>id = 2.0, _ = 'on', testcase = '借款', method = 'post'
+url = 'http://10.141.12.42:8080/yep-front/yep/api/apply_loan'
+uri = '/apply_loan', header = {'Content-type': 'application/json'}
+body = {'abstr': 'test', 'account_id': '128950050873483264', 'bank_card_code': '0436', 'bank_card_expire_date': '', ...}
+exception = "{'head_snd_organ': '1000000000', 'head_rev_organ': '1000000001', 'head_business_id': '6213dec9a5fb48b3b3e5b4744ckk788...me': '1221172624', 'retCode': '0000', 'retMsg': '交易成功', 'loan_id': '20181221128548643779452928', 'loan_status': 'S'}\n"
+
+    @pytest.mark.parametrize('id,_,testcase,method,url,uri,header,body,exception', data)
+    def test_loan_repay(id, _, testcase, method, url, uri, header, body, exception):
+        a = 'hello'
+        allure.attach('测试用例', a)
+        url = url + uri
+        body = json.loads(body)
+        header = json.loads(header)
+        rsp = request(url, body, header)
+        content = rsp.json()["loan_status"]
+        d = 'S'
+        # exception = json.loads(exception)
+        # print('exception is %s'%exception)
+&gt;       check(content, d)
+
+loan_repay2.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+content = None, exception = 'S'
+
+    def check(content, exception):
+        # for k in exception:
+&gt;       assert content == exception
+E       AssertionError
+
+..\tools\tools.py:43: AssertionError</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="72eacb1c-3d98-48ac-a04d-0cfe271bada6-attachment.txt" title="测试用例" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="16300-MainThread"/>
+        <label name="host" value="ISS"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1545650320048" status="failed" stop="1545650320064">
+      <name>loan_repay2.test_loan_repay[3.0-on-\u5355\u7b14\u8bd5\u7b97-post-http://10.141.12.42:8080/yep-front/yep/api-/trial_repay_loan-{"Content-type":"application/json"}-{'head_snd_organ': '1000000000', 'head_rev_organ': '1000000001', 'head_business_id': 'b92bdb938b9a41ccbde761547bf70db1', 'head_msg_version': '1.0', 'abstr': '5634f338b3b7504f6ea0df214dd736f64681b7ff41d3bdcc9f9592973dbd6d0f4219511342a28c6b96e2818fa0211e992844232abdb01f47cde6a810d4db954d8b31d7f8aa490600968b8eb087a65cf54119efb8bf78e57816e83bb03105d67d16a82e837d0b673c6d34cfc8343cd23c8b9764a0c7064e95935e88d6b60697a440fa93db2b8204703970914581c558c7ab288af5fd6b4c2b9eba3987cca3244b1ceee41c22cf761d6b69c2a747582a9a65c6ab0f6c0eb13a39931ced033e83ed2aee21a9adaf5e0c02ced3c3afcb209ff49c5d225103e8442c3693084954b0d5ad918b4280ccb77db93ca30128a7d9ccf7e520e65a018eaa02d7400dc36bf0a6', 'head_rsp_date': '20181221', 'head_rsp_time': '1221172225', 'retCode': '0000', 'retMsg': '\u4ea4\u6613\u6210\u529f', 'loan_id': '20181221128547639444971520', 'due_date': 1545753600000, 'loan_term': 3, 'loan_term_bal': 2, 'rate': 0.1218, 'total_unpaid': 0.0, 'prin_unpaid': 0.0, 'int_unpaid': 0.0, 'pnlt_int_unpaid': 0.0, 'cpd_int_unpaid': 0.0, 'repay_violate_unpaid': 0.0, 'overdue_unpaid': 0.0, 'installment_fee_unpaid': 0.0, 'card_id': '127010930480701440', 'bank_card_number': '6232006400103156609', 'bank_name': '\u5b81\u590f\u94f6\u884c', 'repayplans': []}-{'head_snd_organ': '1000000000', 'head_rev_organ': '1000000001', 'head_business_id': 'b92bdb938b9a41ccbde761547bf70db1', 'head_msg_version': '1.0', 'abstr': '12d6121153775c345effaa1a5efe8b10c874da1cfdbb86b21b4abcd600be342e4a620ef56f5335bf8b3d73535f9f974a83aa2bfacc1d655d982aa288daf90f6b51349ad9df677faa8b5ce528512be197972b5faf93c936f99f6d7bf60f48b3ea5fc0b75acb4b1cfa3a790e4a76b8ecf7e8623f0ab66cb40de05db2534d3a275f4f1efc69f3426c7357deb1675c1d17ce33eaaba9f2815ef287561c0adf7ebbe959bcfaed66764905ea95b5999b9863da2e697325b08f02817ef83defbc47a771750780b2d43d08406eada22da2f810dcb7d6eedd547a29e57bc62c747feb328ecfd5a3df4f98a80ca4e5ad1c392aa4dfd3d2f37b48822f40e050ea70bf2fb735', 'head_rsp_date': '20181221', 'head_rsp_time': '1221172625', 'retCode': '0000', 'retMsg': '\u4ea4\u6613\u6210\u529f', 'loan_id': '20181221128548643779452928', 'due_date': 1545753600000, 'loan_term': 3, 'loan_term_bal': 2, 'rate': 0.1218, 'total_unpaid': 0.0, 'prin_unpaid': 0.0, 'int_unpaid': 0.0, 'pnlt_int_unpaid': 0.0, 'cpd_int_unpaid': 0.0, 'repay_violate_unpaid': 0.0, 'overdue_unpaid': 0.0, 'installment_fee_unpaid': 0.0, 'card_id': '127010930480701440', 'bank_card_number': '6232006400103156609', 'bank_name': '\u5b81\u590f\u94f6\u884c', 'repayplans': []}\n]</name>
+      <failure>
+        <message>JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)</message>
+        <stack-trace>id = 3.0, _ = 'on', testcase = '单笔试算', method = 'post'
+url = 'http://10.141.12.42:8080/yep-front/yep/api/trial_repay_loan'
+uri = '/trial_repay_loan', header = '{"Content-type":"application/json"}'
+body = "{'head_snd_organ': '1000000000', 'head_rev_organ': '1000000001', 'head_business_id': 'b92bdb938b9a41ccbde761547bf70db....0, 'card_id': '127010930480701440', 'bank_card_number': '6232006400103156609', 'bank_name': '宁夏银行', 'repayplans': []}"
+exception = "{'head_snd_organ': '1000000000', 'head_rev_organ': '1000000001', 'head_business_id': 'b92bdb938b9a41ccbde761547bf70db..., 'card_id': '127010930480701440', 'bank_card_number': '6232006400103156609', 'bank_name': '宁夏银行', 'repayplans': []}\n"
+
+    @pytest.mark.parametrize('id,_,testcase,method,url,uri,header,body,exception', data)
+    def test_loan_repay(id, _, testcase, method, url, uri, header, body, exception):
+        a = 'hello'
+        allure.attach('测试用例', a)
+        url = url + uri
+&gt;       body = json.loads(body)
+
+loan_repay2.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\..\..\appdata\local\programs\python\python37\lib\json\__init__.py:348: in loads
+    return _default_decoder.decode(s)
+..\..\..\..\..\appdata\local\programs\python\python37\lib\json\decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;json.decoder.JSONDecoder object at 0x0000022380EFDC50&gt;
+s = "{'head_snd_organ': '1000000000', 'head_rev_organ': '1000000001', 'head_business_id': 'b92bdb938b9a41ccbde761547bf70db....0, 'card_id': '127010930480701440', 'bank_card_number': '6232006400103156609', 'bank_name': '宁夏银行', 'repayplans': []}"
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+&gt;           obj, end = self.scan_once(s, idx)
+E           json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+..\..\..\..\..\appdata\local\programs\python\python37\lib\json\decoder.py:353: JSONDecodeError</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="15f92274-b46b-42a9-96f2-83c3a9b047f3-attachment.txt" title="测试用例" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="16300-MainThread"/>
+        <label name="host" value="ISS"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1545650320065" status="failed" stop="1545650320090">
+      <name>loan_repay2.test_loan_repay[4.0-on-\u8d26\u6237\u8bd5\u7b97-post-http://10.141.12.42:8080/yep-front/yep/api-/trial_repay_account -{"Content-type":"application/json"}-{"head_snd_organ": "1000000001", "head_rev_organ": "1000000000", "head_business_id": "201809123336563222", "head_msg_version": "1.0", "abstr": "test", "head_req_date": "20180810", "head_req_time": "0810152100", "head_tran_product": "XED", "head_tran_service": "100042", "trial_loan": "1", "account_id": "76808589514371072"}-{"errno":"200"}]</name>
+      <failure>
+        <message>KeyError: 'loan_status'</message>
+        <stack-trace>id = 4.0, _ = 'on', testcase = '账户试算', method = 'post'
+url = 'http://10.141.12.42:8080/yep-front/yep/api/trial_repay_account '
+uri = '/trial_repay_account ', header = {'Content-type': 'application/json'}
+body = {'abstr': 'test', 'account_id': '76808589514371072', 'head_business_id': '201809123336563222', 'head_msg_version': '1.0', ...}
+exception = '{"errno":"200"}'
+
+    @pytest.mark.parametrize('id,_,testcase,method,url,uri,header,body,exception', data)
+    def test_loan_repay(id, _, testcase, method, url, uri, header, body, exception):
+        a = 'hello'
+        allure.attach('测试用例', a)
+        url = url + uri
+        body = json.loads(body)
+        header = json.loads(header)
+        rsp = request(url, body, header)
+&gt;       content = rsp.json()["loan_status"]
+E       KeyError: 'loan_status'
+
+loan_repay2.py:21: KeyError</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="39d9c4c6-30e8-4464-b693-1409cdb23bf2-attachment.txt" title="测试用例" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="16300-MainThread"/>
+        <label name="host" value="ISS"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1545650320092" status="failed" stop="1545650320115">
+      <name>loan_repay2.test_loan_repay[5.0-on-\u5355\u7b14\u8fd8\u6b3e-post-http://10.141.12.42:8080/yep-front/yep/api-/repay_loan-{"Content-type":"application/json"}-{"head_snd_organ": "1000000001", "head_rev_organ": "1000000000", "head_business_id": "zxyh2018102514231471800000169880", "head_msg_version": "1.0", "abstr": "519e3ed96087c8c60454527b5af23224ed34b7a6f116b0c237680180926183d7a565e8def82db13521be36835ea7e94b1170dba46b53427dd95c223d9428ca3fac6cbb5743a6dd23dc044637c3357505abd016c542d650dba6974cafcc138d9f4b01e128ed0f768fde14846ae47fa50873a1fbda507efca93fa4abcd765832479d2354ba48cc955b9acf472e2a4b141937c77aa060dc56e5ae6552bab05252693b028a8cbf41d209d15b03df16618d6c4d53acad901f907af556cd6ca0f56ca8350d42c135b74f2fd1ee94541d590a8aed84d5818eaa07b05dae3fe51b92def8f57c0fefdc22cab9aa904f7458b552087a2c743e21718bbd1fc0629dbcb22c2c", "head_req_date": "20181213", "head_req_time": "1025022314", "head_tran_product": "XED", "head_tran_service": "100021", "source": "WC", "os_type": "null", "device_id": "null", "h5_ver": "null", "lbs": "null", "location_prov": "null", "location_city": "null", "location_area": "null", "location_addr": "null", "scence_ip": "223.104.29.231", "mac_addr": "null", "trace_id": "77123787297517568", "loan_id": "loan_id", "bank_card_number": "bank_card_number", "bank_card_code": "0436", "repay_type": "repay_type", "repay_amount": "repay_amount", "currency": "156", "repayInfo": {"retCode": "0000", "retMsg": "\\u4ea4\\u6613\\u6210\\u529f", "businessId": "zxyh2018102514231471800000169880", "payStatus": "S", "pay": "repay_amount", "remark": "\\u8fd8\\u6b3e", "transDate": "20181213", "transTime": "1023023652", "repayTime": 1544682116000, "repayBusinessId": "122768076489592833"}}\n-]</name>
+      <failure>
+        <message>KeyError: 'loan_status'</message>
+        <stack-trace>id = 5.0, _ = 'on', testcase = '单笔还款', method = 'post'
+url = 'http://10.141.12.42:8080/yep-front/yep/api/repay_loan'
+uri = '/repay_loan', header = {'Content-type': 'application/json'}
+body = {'abstr': '519e3ed96087c8c60454527b5af23224ed34b7a6f116b0c237680180926183d7a565e8def82db13521be36835ea7e94b1170dba46b5...43e21718bbd1fc0629dbcb22c2c', 'bank_card_code': '0436', 'bank_card_number': 'bank_card_number', 'currency': '156', ...}
+exception = ''
+
+    @pytest.mark.parametrize('id,_,testcase,method,url,uri,header,body,exception', data)
+    def test_loan_repay(id, _, testcase, method, url, uri, header, body, exception):
+        a = 'hello'
+        allure.attach('测试用例', a)
+        url = url + uri
+        body = json.loads(body)
+        header = json.loads(header)
+        rsp = request(url, body, header)
+&gt;       content = rsp.json()["loan_status"]
+E       KeyError: 'loan_status'
+
+loan_repay2.py:21: KeyError</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="58959b82-8f2d-40b6-afc8-8be49567e8ef-attachment.txt" title="测试用例" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="16300-MainThread"/>
+        <label name="host" value="ISS"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1545650320117" status="failed" stop="1545650320153">
+      <name>loan_repay2.test_loan_repay[6.0-on-\u8d26\u6237\u8fd8\u6b3e-post-http://10.141.12.42:8080/yep-front/yep/api-/repay-{"Content-type":"application/json"}-{"head_snd_organ": "1000000001", "head_rev_organ": "1000000000", "head_business_id": "b92bdaa38b9allcIIuuooghppttp886", "head_msg_version": "1.0", "abstr": "test", "head_req_date": "20181213", "head_req_time": "0810100800", "head_tran_product": "XED", "head_tran_service": "100020", "account_id": "120551028519804928", "bank_card_number": "6232006400103156609", "bank_card_code": "0436", "repay_amount": 1, "currency": "156", "source": "PH", "os_type": "O", "device_id": "IOS", "h5_ver": "1.0", "lbs": "106.729424,26.605585", "location_prov": "\\u5317\\u4eac\\u5e02", "location_city": "\\u5317\\u4eac\\u5e02", "location_area": "\\u671d\\u9633\\u533a", "location_addr": "\\u91d1\\u5730\\u5e7f\\u573a", "scence_ip": "192.168.102.32", "mac_addr": "00:01:6C:06:A6:29", "repayInfo": {"retCode": "0000", "retMsg": "\\u4ea4\\u6613\\u6210\\u529f", "businessId": "b92bdaa38b9allcIIuuooghppttp886", "payStatus": "S", "pay": 1, "remark": "\\u8fd8\\u6b3e", "transDate": "20181213", "transTime": "0816023652", "repayTime": 1544682116000, "repayBusinessId": "122768076489592833"}}\n-{'repay_id': None, 'pay_status': 'S', 'pay_amount': 1.0, 'head_snd_organ': '1000000000', 'head_rev_organ': '1000000001', 'head_business_id': 'b92bdaa38b9allcIIuuooghppttp885', 'head_msg_version': '1.0', 'abstr': '2f7d1d42e5a1cda07ee0b9e2f5d9a677c2f26eb9fb11389cd5f8e7b8fa4d343cdca3aedd7eaadef1a0d326aeeb6153d8a8f70ecdd373523482154f09da025a056246ebf2634c4bc7bdbe24d3c14233555ea26a6b45cbb9d25143c20dc1abeea306e92ef1a433cf37d5d30740efb7ab1eee30a4a8d9aa2d5d1f512b59d62ffbe3028321b46e2c21bd5175648a837f1699e6093f18cb82433c5f99e92b1ce55df35a8b453098a15317e5492fa21c62a59edca7fc58b8a576852404ada6539f173dcf08c74d354d2f3e36d08a0f5f6fc45c899b04e5cad04dfaa1976a1fd56339aacb321642a65d6901cf8e8e9e96a87fe6ceab66707f78ab52998dc935246a3db5', 'head_rsp_date': '20181221', 'head_rsp_time': '1221172625', 'retCode': '0000', 'retMsg': '\u4ea4\u6613\u6210\u529f'}\n]</name>
+      <failure>
+        <message>KeyError: 'loan_status'</message>
+        <stack-trace>id = 6.0, _ = 'on', testcase = '账户还款', method = 'post'
+url = 'http://10.141.12.42:8080/yep-front/yep/api/repay', uri = '/repay'
+header = {'Content-type': 'application/json'}
+body = {'abstr': 'test', 'account_id': '120551028519804928', 'bank_card_code': '0436', 'bank_card_number': '6232006400103156609', ...}
+exception = "{'repay_id': None, 'pay_status': 'S', 'pay_amount': 1.0, 'head_snd_organ': '1000000000', 'head_rev_organ': '100000000...2998dc935246a3db5', 'head_rsp_date': '20181221', 'head_rsp_time': '1221172625', 'retCode': '0000', 'retMsg': '交易成功'}\n"
+
+    @pytest.mark.parametrize('id,_,testcase,method,url,uri,header,body,exception', data)
+    def test_loan_repay(id, _, testcase, method, url, uri, header, body, exception):
+        a = 'hello'
+        allure.attach('测试用例', a)
+        url = url + uri
+        body = json.loads(body)
+        header = json.loads(header)
+        rsp = request(url, body, header)
+&gt;       content = rsp.json()["loan_status"]
+E       KeyError: 'loan_status'
+
+loan_repay2.py:21: KeyError</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="60bef30b-c589-4e45-9083-c9f433ebf414-attachment.txt" title="测试用例" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="16300-MainThread"/>
+        <label name="host" value="ISS"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>
